@@ -1,34 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Navbar from "./components/Navbar/Navbar";
+import Card from "./components/Card/Card";
+import Footer from "./components/Footer/Footer";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+{
+  /*
+    <div className={styles.center}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -37,59 +15,64 @@ export default function Home() {
           height={37}
           priority
         />
+    </div>
+  */
+}
+
+export default function Home() {
+  const cardsGrid = [
+    {
+      title: 'Ingreso',
+      description:'+Vivi la experiencia de estudiar en UMAI',
+      image:'/lg_umai.png'
+    },
+    {
+      title: 'Grado',
+      description:'+La carrera que estas buscando',
+      image:'/lg_umai.png'
+    },
+    {
+      title: 'Posgrado',
+      description:'+Especializate en UMAI',
+      image:'/lg_umai.png'
+    },
+    {
+      title: 'Extensión',
+      description:'+Cursos y Actividades',
+      image:'/lg_umai.png'
+    }
+  ]
+
+  const redesSociales = [
+    {
+      title:'Facebook',
+      link:'/Facebook/'
+    },
+    {
+      title:'Instagram',
+      link:'/Instagram/'
+    },
+    {
+      title:'TikTok',
+      link:'/TikTok/'
+    }
+  ]
+
+  return (
+    <main className={styles.main}>
+      <Navbar title={'Universidad Maimónides'}/>
+      <div>
+        {
+          cardsGrid.map((card, index)=> (
+          <Card 
+          key={index}
+          title={card.title}
+          image={card.image}
+          description={card.description}
+          />
+        ))}
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Footer redes={redesSociales}/>
     </main>
   );
 }
