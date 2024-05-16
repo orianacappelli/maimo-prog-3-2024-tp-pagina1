@@ -1,46 +1,74 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar/Navbar";
 import Card from "./components/Card/Card";
+import Hero from "@/app/components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
+import CardsGrid from "@/app/components/CardsGrid/CardsGrid";
+import FetchGrid from "@/app/components/FetchGrid/FetchGrid"
 
-{
-  /*
-    <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-    </div>
-  */
-}
 
 export default function Home() {
-  const cardsGrid = [
+  const data = [
     {
-      title: 'Ingreso',
-      description:'+Vivi la experiencia de estudiar en UMAI',
-      image:'/lg_umai.png'
+      title: 'Iron man',
+      description:'',
+      image:'/images/iron-man.jpeg'
     },
     {
-      title: 'Grado',
-      description:'+La carrera que estas buscando',
-      image:'/lg_umai.png'
+      title: 'Captain America',
+      description:'',
+      image:'/images/captain-american.jpeg'
     },
     {
-      title: 'Posgrado',
-      description:'+Especializate en UMAI',
-      image:'/lg_umai.png'
+      title: 'Spiderman',
+      description:'',
+      image:'/images/spiderman.jpeg'
     },
     {
-      title: 'Extensión',
-      description:'+Cursos y Actividades',
-      image:'/lg_umai.png'
+      title: 'Hulk',
+      description:'',
+      image:'/images/hulk.jpeg'
+    },
+    {
+      title: 'Black Widow',
+      description:'',
+      image:'/images/black-widow.jpeg'
+    },
+    {
+      title: 'Star Lord',
+      description:'',
+      image:'/images/star-lord.jpeg'
+    },
+    {
+      title: 'Black Panter',
+      description:'',
+      image:'/images/black-panter.jpeg'
+    },
+    {
+      title: 'Ant Man',
+      description:'',
+      image:'/images/ant-man.jpeg'
+    },
+    {
+      title: 'Thor',
+      description:'',
+      image:'/images/thor.jpeg'
     }
+  ]
+
+  const menuItems = [
+    {
+      item: "Home",
+      link: "/",
+    },
+    {
+      item: "About",
+      link: "/",
+    },
+    {
+      item: "Contact",
+      link: "/",
+    },
   ]
 
   const redesSociales = [
@@ -60,19 +88,12 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Navbar title={'Universidad Maimónides'}/>
-      <div>
-        {
-          cardsGrid.map((card, index)=> (
-          <Card 
-          key={index}
-          title={card.title}
-          image={card.image}
-          description={card.description}
-          />
-        ))}
-      </div>
+
+      <Navbar title={'Marvel'} menu={menuItems}/>
+      <Hero mainText={`Marvel`}/>
+      <CardsGrid cards={data}/>
       <Footer redes={redesSociales}/>
+      <FetchGrid/>
     </main>
   );
 }

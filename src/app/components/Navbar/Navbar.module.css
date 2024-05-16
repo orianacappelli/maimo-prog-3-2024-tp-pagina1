@@ -1,0 +1,18 @@
+.container-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.menu > li > a{
+    color: rgb(205, 205, 205);
+}
+.menu > li > a:hover{
+    color: white;
+}
