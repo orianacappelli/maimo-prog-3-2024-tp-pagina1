@@ -1,19 +1,35 @@
-import Image from "next/image";
+'use client'
 
-const Card = (props) => {
-  const { image, title, description } = props;
+import {useState} from 'react'
+import Image from "next/image";
+import styles from "./Card.module.css";
+
+const Card = ({ image, title, description }) => {
+  const [message, setMessage] = useState(`Marvel`);
+
+  const handleButtonClick = () => {
+    console.log("Clickeando");
+    setMessage(`Lego Marvel`);
+  };
+
   return (
-    <div style={{ backgroundColor: "grey", padding: "20px" }}>
+    <div
+      className={styles.container}
+      styles={{ backgroundImage: `url(${image})`}}
+    >
       <Image
         src={image}
         alt='marvel personaje'
-        width={180}
-        height={37}
+        width={200}
+        height={160}
         priority
       />
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <button>Ver más</button>
+      <div className={styles.data}>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <p>{message}</p>
+        <button onClick={handleButtonClick} className={styles.secondary_button}>Learn more</button>
+      </div>
     </div>
   );
 };

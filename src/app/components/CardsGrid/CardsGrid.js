@@ -1,7 +1,7 @@
+'use client'
 
 import Card from "@/app/components/Card/Card";
 import styles from "./CardsGrid.module.css";
-
 
 const CardsGrid = ({ cards }) => {
 

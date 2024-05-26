@@ -88,13 +88,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #00182b;
 }
 
 
@@ -126,7 +120,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .grid > * {
-      grid-column: span 12;
+      grid-column: span 3;
   }
   .grid{
       grid-row-gap: 22px;

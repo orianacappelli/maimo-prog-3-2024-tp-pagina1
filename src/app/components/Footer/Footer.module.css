@@ -1,0 +1,23 @@
+.container{
+    background-color: #002845;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    padding: 80px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+}
+.redes > li > a{
+    color: rgb(205, 205, 205);
+    
+}
+.redes > li > a:hover{
+    color: white;
+}

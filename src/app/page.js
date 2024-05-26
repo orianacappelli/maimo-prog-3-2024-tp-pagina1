@@ -12,49 +12,49 @@ export default function Home() {
     {
       title: 'Iron man',
       description:'',
-      image:'/images/iron-man.jpeg'
+      image:'/images/ironmann.png'
     },
     {
       title: 'Captain America',
       description:'',
-      image:'/images/captain-american.jpeg'
+      image:'/images/captainamerican.png'
     },
     {
       title: 'Spiderman',
       description:'',
-      image:'/images/spiderman.jpeg'
+      image:'/images/spidermann.png'
     },
     {
       title: 'Hulk',
       description:'',
-      image:'/images/hulk.jpeg'
+      image:'/images/hulkk.png'
     },
     {
       title: 'Black Widow',
       description:'',
-      image:'/images/black-widow.jpeg'
+      image:'/images/blackwidow.png'
     },
     {
       title: 'Star Lord',
       description:'',
-      image:'/images/star-lord.jpeg'
+      image:'/images/starlord.png'
     },
     {
       title: 'Black Panter',
       description:'',
-      image:'/images/black-panter.jpeg'
+      image:'/images/blackpanter.png'
     },
     {
       title: 'Ant Man',
       description:'',
-      image:'/images/ant-man.jpeg'
+      image:'/images/antman.png'
     },
     {
       title: 'Thor',
       description:'',
-      image:'/images/thor.jpeg'
+      image:'/images/thorr.png'
     }
-  ]
+  ];
 
   const menuItems = [
     {
@@ -77,12 +77,12 @@ export default function Home() {
       link:'/Facebook/'
     },
     {
-      title:'Instagram',
-      link:'/Instagram/'
-    },
-    {
       title:'TikTok',
       link:'/TikTok/'
+    },
+    {
+      title:'Instagram',
+      link:'/Instagram/'
     }
   ]
 
@@ -90,7 +90,7 @@ export default function Home() {
     <main className={styles.main}>
 
       <Navbar title={'Marvel'} menu={menuItems}/>
-      <Hero mainText={`Marvel`}/>
+      <Hero mainText={`LEGO MARVEL`} textoParr={'From superheroes to super villains, anti-heroes to evil geniuses, loveable loners to comedic wisecrackers, LEGO® Marvel’s impressive lineup of iconic characters is as diverse as it is awesome.'}/>
       <CardsGrid cards={data}/>
       <Footer redes={redesSociales}/>
       <FetchGrid/>
